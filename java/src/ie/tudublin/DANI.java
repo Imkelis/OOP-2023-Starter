@@ -8,6 +8,7 @@ public class DANI extends PApplet {
 
 	String[] line;
 	String[] words;
+	Word Addwords = new Word();
 
 	public void settings() {
 		size(1000, 1000);
@@ -21,6 +22,7 @@ public class DANI extends PApplet {
 	}
 
 	public void setup() {
+
 		colorMode(HSB);
 
 	}
@@ -38,7 +40,7 @@ public class DANI extends PApplet {
 			for (String word : words) {
 				word = word.replaceAll("[^\\w\\s]", "");
 
-				System.out.println(word);
+				Addwords.addWord(word);
 
 			}
 

@@ -17,6 +17,7 @@ public class Word {
         } else {
             words.add(word);
         }
+        System.out.println(words);
 
     }
 
