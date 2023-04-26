@@ -3,6 +3,7 @@ package ie.tudublin;
 import java.util.ArrayList;
 
 public class Word {
+    int count = -1;
 
     ArrayList<Follow> words = new ArrayList<Follow>();
 
@@ -12,11 +13,10 @@ public class Word {
 
     public void addWord(String word) {
 
-        int last = words.lastIndexOf(words);
-
         if (words.isEmpty()) {
             Follow f = new Follow(word);
             words.add(f);
+            count++;
         }
 
         for (Follow fs : words) {
@@ -28,17 +28,16 @@ public class Word {
 
             int current = words.indexOf(fs);
 
-            System.out.println(last);
-
             if (fs.word != word) {
 
-                if (last == current) {
+                if (count == current) {
                     Follow f = new Follow(word);
                     words.add(f);
+                    count++;
+                    System.out.println(f.word);
+                    break;
 
                 }
-
-                continue;
             }
 
         }
