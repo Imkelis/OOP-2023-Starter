@@ -24,6 +24,8 @@ public class DANI extends PApplet {
 	public void setup() {
 
 		colorMode(HSB);
+		loadFile();
+		Addwords.printModel();
 
 	}
 
@@ -60,7 +62,6 @@ public class DANI extends PApplet {
 		noStroke();
 		textSize(20);
 		textAlign(CENTER, CENTER);
-		loadFile();
 
 	}
 }

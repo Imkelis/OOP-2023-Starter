@@ -11,36 +11,52 @@ public class Word {
 
     }
 
-    public void addWord(String word) {
-
-        if (words.isEmpty()) {
-            Follow f = new Follow(word);
-            words.add(f);
-            count++;
-        }
+    public boolean findWord(String word) {
 
         for (Follow fs : words) {
 
             if (fs.word == word) {
-                fs.count++;
-                break;
-            }
-
-            int current = words.indexOf(fs);
-
-            if (fs.word != word) {
-
-                if (count == current) {
-                    Follow f = new Follow(word);
-                    words.add(f);
-                    count++;
-                    System.out.println(f.word);
-                    break;
-
-                }
+                return true;
             }
 
         }
+        return false;
+    }
+
+    public void printModel() {
+
+        for (Follow fs : words) {
+
+            System.out.println(fs.word + "(" + fs.count + ")");
+
+        }
+    }
+
+    public void addWord(String word) {
+
+        if (words.isEmpty()) {
+
+            Follow f = new Follow(word);
+            words.add(f);
+
+        }
+
+        if (findWord(word) == false) {
+
+            Follow f = new Follow(word);
+            words.add(f);
+            // f.count++;
+
+        } else {
+
+            for (Follow fs : words) {
+                if (fs.word == word) {
+                    fs.count++;
+                }
+
+            }
+        }
+
     }
 
 }
@@ -67,6 +83,32 @@ public class Word {
 // } else {
 // Follow f = new Follow(word);
 // words.add(f);
+// }
+
+// }
+
+// if (words.isEmpty()) {
+// Follow f = new Follow(word);
+// words.add(f);
+// count++;
+// }
+
+// for (Follow fs : words) {
+
+// int current = words.indexOf(fs);
+
+// if (count == current && fs.word != word) {
+// Follow f = new Follow(word);
+// words.add(f);
+// count++;
+// // System.out.print("test");
+// break;
+
+// }
+
+// if (fs.word == word) {
+// System.out.println(fs.word + word);
+// fs.count++;
 // }
 
 // }
