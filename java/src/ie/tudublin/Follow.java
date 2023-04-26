@@ -5,6 +5,8 @@ public class Follow {
     int count;
     String word;
 
+    // doesnt increase count
+
     public Follow(String word) {
 
         this.word = word;
@@ -26,6 +28,11 @@ public class Follow {
 
     public void setWord(String word) {
         this.word = word;
+    }
+
+    @Override
+    public String toString() {
+        return "Follow [count=" + count + ", word=" + word + "]";
     }
 
 }

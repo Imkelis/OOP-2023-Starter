@@ -13,6 +13,8 @@ public class Word {
 
     }
 
+    //// This was suppoed to find the duplicated words. Doesnt work as it doesnt
+    //// detect anyything as a duplicate.
     public Follow findWord(String word) {
 
         for (Follow fs : words) {
@@ -36,6 +38,8 @@ public class Word {
         }
     }
 
+    //////// I couldnt get this to correctly add the words. It for some reason
+    //////// couldnt detect duplicates.
     public void addWord(String word) {
 
         if (findWord(word) == null) {
@@ -49,6 +53,11 @@ public class Word {
             wo.count = wo.count + 1;
         }
 
+    }
+
+    @Override
+    public String toString() {
+        return "Word [count=" + count + ", words=" + words + "]";
     }
 
 }

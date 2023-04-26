@@ -1,6 +1,7 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import processing.core.PApplet;
 
@@ -69,6 +70,8 @@ public class DANI extends PApplet {
 		this.off = off;
 	}
 
+	///// This loads the file ////
+
 	public void loadFile() {
 
 		line = loadStrings("small.txt");
@@ -104,4 +107,11 @@ public class DANI extends PApplet {
 		textAlign(CENTER, CENTER);
 
 	}
+
+	@Override
+	public String toString() {
+		return "DANI [line=" + Arrays.toString(line) + ", words=" + Arrays.toString(words) + ", Addwords=" + Addwords
+				+ ", sonnet=" + Arrays.toString(sonnet) + ", off=" + off + "]";
+	}
+
 }
