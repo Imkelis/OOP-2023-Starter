@@ -29,6 +29,46 @@ public class DANI extends PApplet {
 
 	}
 
+	public String[] getLine() {
+		return line;
+	}
+
+	public void setLine(String[] line) {
+		this.line = line;
+	}
+
+	public String[] getWords() {
+		return words;
+	}
+
+	public void setWords(String[] words) {
+		this.words = words;
+	}
+
+	public Word getAddwords() {
+		return Addwords;
+	}
+
+	public void setAddwords(Word addwords) {
+		Addwords = addwords;
+	}
+
+	public String[] getSonnet() {
+		return sonnet;
+	}
+
+	public void setSonnet(String[] sonnet) {
+		this.sonnet = sonnet;
+	}
+
+	public float getOff() {
+		return off;
+	}
+
+	public void setOff(float off) {
+		this.off = off;
+	}
+
 	public void loadFile() {
 
 		line = loadStrings("small.txt");

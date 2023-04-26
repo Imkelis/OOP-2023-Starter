@@ -11,16 +11,18 @@ public class Word {
 
     }
 
-    public boolean findWord(String word) {
+    public Follow findWord(String word) {
 
         for (Follow fs : words) {
 
             if (fs.word == word) {
-                return true;
+                System.out.println("test");
+                System.out.println(word);
+                return fs;
             }
 
         }
-        return false;
+        return null;
     }
 
     public void printModel() {
@@ -34,27 +36,15 @@ public class Word {
 
     public void addWord(String word) {
 
-        if (words.isEmpty()) {
+        if (findWord(word) == null) {
 
             Follow f = new Follow(word);
             words.add(f);
-
-        }
-
-        if (findWord(word) == false) {
-
-            Follow f = new Follow(word);
-            words.add(f);
-            // f.count++;
 
         } else {
 
-            for (Follow fs : words) {
-                if (fs.word == word) {
-                    fs.count++;
-                }
-
-            }
+            Follow wo = findWord(word);
+            wo.count = wo.count + 1;
         }
 
     }
