@@ -3,11 +3,13 @@ package ie.tudublin;
 import java.util.ArrayList;
 
 public class Word {
-    int count = -1;
+    int count;
 
     ArrayList<Follow> words = new ArrayList<Follow>();
 
     public Word() {
+
+        this.count = -1;
 
     }
 
